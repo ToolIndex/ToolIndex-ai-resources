@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://toolindex.dev/email-logo.svg" width="72" height="72" alt="ToolIndex" />
+<img src="https://toolindex.dev/api/logo" width="72" height="72" alt="ToolIndex" />
 
 # ToolIndex — AI Resources
 

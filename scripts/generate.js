@@ -38,7 +38,7 @@ function generateReadme(resources, siteUrl) {
     const date = new Date().toISOString().split("T")[0];
 
     let md = `<div align="center">\n`;
-    md += `<img src="${siteUrl}/email-logo.svg" width="72" height="72" alt="ToolIndex" />\n\n`;
+    md += `<img src="${siteUrl}/api/logo" width="72" height="72" alt="ToolIndex" />\n\n`;
     md += `# ToolIndex — AI Resources\n\n`;
     md += `**${count} curated AI resources** (MCP servers, models, datasets, prompts), automatically synced nightly from [ToolIndex](${siteUrl}).\n\n`;
     md += `[![Submit a Resource](https://img.shields.io/badge/Submit%20a%20Resource-%236366f1?style=for-the-badge&logo=github)](${siteUrl}/ai/submit)`;

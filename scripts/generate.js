@@ -21,6 +21,10 @@ function extractGithubPath(url) {
     return match ? match[1].replace(/\.git$/, "") : null;
 }
 
+function slugify(text) {
+    return text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
 function generateReadme(resources, siteUrl) {
     const byCategory = {};
     for (const r of resources) {
@@ -31,29 +35,40 @@ function generateReadme(resources, siteUrl) {
 
     const categories = Object.keys(byCategory).sort();
     const count = resources.length;
+    const date = new Date().toISOString().split("T")[0];
 
-    let md = `# ToolIndex — AI Resources\n\n`;
-    md += `> A curated list of **${count} AI resources** (MCP servers, models, datasets, prompts), automatically synced from [ToolIndex](${siteUrl}).\n`;
-    md += `> **Submit a resource:** [${siteUrl}/submit](${siteUrl}/submit)\n\n`;
+    let md = `<div align="center">\n`;
+    md += `<img src="${siteUrl}/email-logo.svg" width="72" height="72" alt="ToolIndex" />\n\n`;
+    md += `# ToolIndex — AI Resources\n\n`;
+    md += `**${count} curated AI resources** (MCP servers, models, datasets, prompts), automatically synced nightly from [ToolIndex](${siteUrl}).\n\n`;
+    md += `[![Submit a Resource](https://img.shields.io/badge/Submit%20a%20Resource-%236366f1?style=for-the-badge&logo=github)](${siteUrl}/ai/submit)`;
+    md += ` [![Visit ToolIndex](https://img.shields.io/badge/Visit%20ToolIndex-black?style=for-the-badge)](${siteUrl})\n\n`;
+    md += `![Last Synced](https://img.shields.io/badge/last%20synced-${date}-brightgreen?style=flat-square)\n`;
+    md += `</div>\n\n---\n\n`;
+
     md += `## Categories\n\n`;
+    for (const cat of categories) {
+        md += `- [${cat}](#${slugify(cat)}) (${byCategory[cat].length})\n`;
+    }
+    md += `\n---\n\n`;
 
     for (const cat of categories) {
-        md += `### ${cat}\n\n`;
+        md += `## ${cat}\n\n`;
         const sorted = byCategory[cat].sort((a, b) => a.name.localeCompare(b.name));
         for (const r of sorted) {
             const githubPath = extractGithubPath(r.github_url);
-            const badge = githubPath
-                ? ` ![GitHub stars](https://img.shields.io/github/stars/${githubPath}?style=flat-square)`
+            const stars = githubPath
+                ? ` ![stars](https://img.shields.io/github/stars/${githubPath}?style=flat-square&label=★&color=gold)`
                 : "";
             const links = [];
             if (r.github_url) links.push(`[GitHub](${r.github_url})`);
             if (r.website_url && r.website_url !== r.github_url) links.push(`[Website](${r.website_url})`);
             const linkStr = links.length ? `  \n  ${links.join(" · ")}` : "";
-            md += `- **${r.name}**${badge}  \n  ${r.description}${linkStr}\n\n`;
+            md += `### ${r.name}${stars}\n\n${r.description}${linkStr}\n\n`;
         }
     }
 
-    md += `---\n\n*Last synced: ${new Date().toISOString().split("T")[0]}*\n`;
+    md += `---\n\n<div align="center"><sub>Last synced: ${date} · Powered by <a href="${siteUrl}">ToolIndex</a></sub></div>\n`;
     return md;
 }
 

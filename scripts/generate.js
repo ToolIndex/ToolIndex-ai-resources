@@ -1,9 +1,11 @@
 const https = require("https");
+const http = require("http");
 const fs = require("fs");
 
 function fetchJSON(url) {
+    const lib = url.startsWith("https") ? https : http;
     return new Promise((resolve, reject) => {
-        https.get(url, (res) => {
+        lib.get(url, (res) => {
             let data = "";
             res.on("data", (chunk) => (data += chunk));
             res.on("end", () => {
@@ -25,7 +27,7 @@ function slugify(text) {
     return text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 }
 
-function generateReadme(resources, siteUrl) {
+function generateReadme(resources, siteUrl, config) {
     const byCategory = {};
     for (const r of resources) {
         const cat = r.category || "Uncategorized";
@@ -38,12 +40,19 @@ function generateReadme(resources, siteUrl) {
     const date = new Date().toISOString().split("T")[0];
     const badgeDate = date.replace(/-/g, "--");
 
+    const submitUrl = config.ai_submit_url
+        ? (config.ai_submit_url.startsWith("http") ? config.ai_submit_url : `${siteUrl}${config.ai_submit_url}`)
+        : null;
+
     let md = `<div align="center">\n`;
     md += `<img src="${siteUrl}/api/logo" width="72" height="72" alt="ToolIndex" />\n\n`;
     md += `# ToolIndex — AI Resources\n\n`;
     md += `**${count} curated AI resources** (MCP servers, models, datasets, prompts), automatically synced nightly from [ToolIndex](${siteUrl}).\n\n`;
-    md += `[![Submit a Resource](https://img.shields.io/badge/Submit%20a%20Resource-%236366f1?style=for-the-badge&logo=github)](${siteUrl}/ai/submit)`;
-    md += ` [![Visit ToolIndex](https://img.shields.io/badge/Visit%20ToolIndex-black?style=for-the-badge)](${siteUrl})\n\n`;
+    if (submitUrl) {
+        md += `[![Submit a Resource](https://img.shields.io/badge/Submit%20a%20Resource-%236366f1?style=for-the-badge)](${submitUrl})`;
+        md += ` `;
+    }
+    md += `[![Visit ToolIndex](https://img.shields.io/badge/Visit%20ToolIndex-black?style=for-the-badge)](${siteUrl})\n\n`;
     md += `![Last Synced](https://img.shields.io/badge/last%20synced-${badgeDate}-brightgreen?style=flat-square)\n`;
     md += `</div>\n\n---\n\n`;
 
@@ -77,12 +86,15 @@ async function main() {
     const siteUrl = (process.env.TOOLINDEX_API_URL || "").replace(/\/+$/, "");
     if (!siteUrl) throw new Error("TOOLINDEX_API_URL environment variable is required");
 
+    console.log(`Fetching config from ${siteUrl}/api/export/github-config ...`);
+    const config = await fetchJSON(`${siteUrl}/api/export/github-config`);
+
     console.log(`Fetching from ${siteUrl}/api/export/ai-resources ...`);
     const resources = await fetchJSON(`${siteUrl}/api/export/ai-resources`);
     console.log(`Got ${resources.length} AI resources`);
 
     fs.writeFileSync("ai-resources.json", JSON.stringify(resources, null, 2) + "\n");
-    fs.writeFileSync("README.md", generateReadme(resources, siteUrl));
+    fs.writeFileSync("README.md", generateReadme(resources, siteUrl, config));
 
     console.log("Generated README.md and ai-resources.json");
 }

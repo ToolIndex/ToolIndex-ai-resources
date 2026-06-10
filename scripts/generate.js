@@ -36,6 +36,7 @@ function generateReadme(resources, siteUrl) {
     const categories = Object.keys(byCategory).sort();
     const count = resources.length;
     const date = new Date().toISOString().split("T")[0];
+    const badgeDate = date.replace(/-/g, "--");
 
     let md = `<div align="center">\n`;
     md += `<img src="${siteUrl}/api/logo" width="72" height="72" alt="ToolIndex" />\n\n`;
@@ -43,7 +44,7 @@ function generateReadme(resources, siteUrl) {
     md += `**${count} curated AI resources** (MCP servers, models, datasets, prompts), automatically synced nightly from [ToolIndex](${siteUrl}).\n\n`;
     md += `[![Submit a Resource](https://img.shields.io/badge/Submit%20a%20Resource-%236366f1?style=for-the-badge&logo=github)](${siteUrl}/ai/submit)`;
     md += ` [![Visit ToolIndex](https://img.shields.io/badge/Visit%20ToolIndex-black?style=for-the-badge)](${siteUrl})\n\n`;
-    md += `![Last Synced](https://img.shields.io/badge/last%20synced-${date}-brightgreen?style=flat-square)\n`;
+    md += `![Last Synced](https://img.shields.io/badge/last%20synced-${badgeDate}-brightgreen?style=flat-square)\n`;
     md += `</div>\n\n---\n\n`;
 
     md += `## Categories\n\n`;

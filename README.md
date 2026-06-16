@@ -7,7 +7,7 @@
 
 [![Submit a Resource](https://img.shields.io/badge/Submit%20a%20Resource-%236366f1?style=for-the-badge)](https://toolindex.dev/ai/submit) [![Visit ToolIndex](https://img.shields.io/badge/Visit%20ToolIndex-black?style=for-the-badge)](https://toolindex.dev)
 
-![Last Synced](https://img.shields.io/badge/last%20synced-2026--06--15-brightgreen?style=flat-square)
+![Last Synced](https://img.shields.io/badge/last%20synced-2026--06--16-brightgreen?style=flat-square)
 </div>
 
 ---
@@ -19,4 +19,4 @@
 
 ---
 
-<div align="center"><sub>Last synced: 2026-06-15 · Powered by <a href="https://toolindex.dev">ToolIndex</a></sub></div>
+<div align="center"><sub>Last synced: 2026-06-16 · Powered by <a href="https://toolindex.dev">ToolIndex</a></sub></div>

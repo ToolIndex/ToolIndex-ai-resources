@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "name": "Design Doc Mermaid",
+    "description": "design-doc-mermaid Claude Skill",
+    "category": "Agent Skill",
+    "github_url": "https://github.com/SpillwaveSolutions/design-doc-mermaid",
+    "website_url": "https://downgit.github.io/#/home?url=https%3A%2F%2Fgithub.com%2FSpillwaveSolutions%2Fdesign-doc-mermaid"
+  }
+]

@@ -7,18 +7,18 @@
 
 [![Visit ToolIndex](https://img.shields.io/badge/Visit%20ToolIndex-black?style=for-the-badge)](https://toolindex.dev)
 
-![Last Synced](https://img.shields.io/badge/last%20synced-2026--09--01-brightgreen?style=flat-square)
+![Last Synced](https://img.shields.io/badge/last%20synced-2026--09--02-brightgreen?style=flat-square)
 </div>
 
 ---
 
 ## Categories
 
-- [Agent Skill](#agent-skill) (1)
+- [Coding & Software Engineering](#coding-software-engineering) (1)
 
 ---
 
-## Agent Skill
+## Coding & Software Engineering
 
 ### Design Doc Mermaid ![stars](https://img.shields.io/github/stars/SpillwaveSolutions/design-doc-mermaid?style=flat-square&label=★&color=gold)
 
@@ -27,4 +27,4 @@ design-doc-mermaid Claude Skill
 
 ---
 
-<div align="center"><sub>Last synced: 2026-09-01 · Powered by <a href="https://toolindex.dev">ToolIndex</a></sub></div>
+<div align="center"><sub>Last synced: 2026-09-02 · Powered by <a href="https://toolindex.dev">ToolIndex</a></sub></div>

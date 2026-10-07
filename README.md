@@ -7,7 +7,7 @@
 
 [![Visit ToolIndex](https://img.shields.io/badge/Visit%20ToolIndex-black?style=for-the-badge)](https://toolindex.dev)
 
-![Last Synced](https://img.shields.io/badge/last%20synced-2026--10--06-brightgreen?style=flat-square)
+![Last Synced](https://img.shields.io/badge/last%20synced-2026--10--07-brightgreen?style=flat-square)
 </div>
 
 ---
@@ -27,4 +27,4 @@ Design Doc Mermaid is a Claude Code skill that extracts, validates, and converts
 
 ---
 
-<div align="center"><sub>Last synced: 2026-10-06 · Powered by <a href="https://toolindex.dev">ToolIndex</a></sub></div>
+<div align="center"><sub>Last synced: 2026-10-07 · Powered by <a href="https://toolindex.dev">ToolIndex</a></sub></div>

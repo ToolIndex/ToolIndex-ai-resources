@@ -5,5 +5,12 @@
     "category": "Coding & Software Engineering",
     "github_url": "https://github.com/SpillwaveSolutions/design-doc-mermaid",
     "website_url": "https://downgit.github.io/#/home?url=https%3A%2F%2Fgithub.com%2FSpillwaveSolutions%2Fdesign-doc-mermaid"
+  },
+  {
+    "name": "Higgsfield Product Photoshoot",
+    "description": "Generate brand-quality product images through Higgsfield product-photoshoot prompt enhancement on GPT Image 2 / gpt_image_2. Entry point for professional brand/product visuals. Use when: \"product phot",
+    "category": "Image & Design",
+    "github_url": "https://github.com/higgsfield-ai/skills/tree/HEAD/higgsfield-product-photoshoot",
+    "website_url": "https://downgit.github.io/#/home?url=https%3A%2F%2Fgithub.com%2Fhiggsfield-ai%2Fskills%2Ftree%2FHEAD%2Fhiggsfield-product-photoshoot"
   }
 ]

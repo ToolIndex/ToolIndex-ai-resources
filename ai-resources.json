@@ -12,5 +12,12 @@
     "category": "Image & Design",
     "github_url": "https://github.com/higgsfield-ai/skills/tree/HEAD/higgsfield-product-photoshoot",
     "website_url": "https://downgit.github.io/#/home?url=https%3A%2F%2Fgithub.com%2Fhiggsfield-ai%2Fskills%2Ftree%2FHEAD%2Fhiggsfield-product-photoshoot"
+  },
+  {
+    "name": "Grill Me",
+    "description": "Grill Me is an AI agent skill that executes a relentless interview process to help engineers refine and sharpen their plans or designs.",
+    "category": "Writing & Content",
+    "github_url": "https://github.com/mattpocock/skills/tree/HEAD/skills/productivity/grill-me",
+    "website_url": "https://downgit.github.io/#/home?url=https%3A%2F%2Fgithub.com%2Fmattpocock%2Fskills%2Ftree%2FHEAD%2Fskills%2Fproductivity%2Fgrill-me"
   }
 ]

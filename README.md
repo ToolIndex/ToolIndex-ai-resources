@@ -7,7 +7,7 @@
 
 [![Visit ToolIndex](https://img.shields.io/badge/Visit%20ToolIndex-black?style=for-the-badge)](https://toolindex.dev)
 
-![Last Synced](https://img.shields.io/badge/last%20synced-2026--10--30-brightgreen?style=flat-square)
+![Last Synced](https://img.shields.io/badge/last%20synced-2026--10--31-brightgreen?style=flat-square)
 </div>
 
 ---
@@ -43,4 +43,4 @@ Grill Me is an AI agent skill that executes a relentless interview process to he
 
 ---
 
-<div align="center"><sub>Last synced: 2026-10-30 · Powered by <a href="https://toolindex.dev">ToolIndex</a></sub></div>
+<div align="center"><sub>Last synced: 2026-10-31 · Powered by <a href="https://toolindex.dev">ToolIndex</a></sub></div>
